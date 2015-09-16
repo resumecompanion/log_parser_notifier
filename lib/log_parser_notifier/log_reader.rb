@@ -2,8 +2,12 @@ module LogParserNotifier
   class LogReader
     def initialize(log_file)
       LogParserNotifier.logger.debug("creating log reader for: '#{log_file}'")
-      @log_file = File.open(log_file, 'rb')
-      @log_file.seek(@log_file.size, IO::SEEK_SET)
+      if log_file.instance_of? String
+        @log_file = File.open(log_file, 'rb')
+        @log_file.seek(@log_file.size, IO::SEEK_SET)
+      else
+        @log_file = log_file # really just for testing
+      end
       LogParserNotifier.logger.debug("staring position at: #{@log_file.pos}")
     end
 

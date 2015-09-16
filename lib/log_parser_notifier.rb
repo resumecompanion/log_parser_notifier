@@ -1,12 +1,9 @@
 require 'log_parser_notifier/version'
 require 'log_parser_notifier/log_reader'
+require 'log_parser_notifier/rails_request_notifier'
+
 require 'logger'
-
-
-
-# logger.debug("Created logger")
-# logger.info("Program started")
-# logger.warn("Nothing to do!")
+require 'request_log_analyzer'
 
 
 module LogParserNotifier
@@ -21,5 +18,4 @@ module LogParserNotifier
 
     @logger
   end
-  # Your code goes here...
 end
