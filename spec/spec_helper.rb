@@ -1,5 +1,11 @@
 require 'bundler/setup'
+require 'logger'
+
 Bundler.setup
+
+module LogParserNotifier
+  LogLevel = Logger::DEBUG
+end
 
 require 'log_parser_notifier' # and any other gems you need
 
