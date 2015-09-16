@@ -1,0 +1,19 @@
+I, [2015-08-24T07:38:26.257000 #19020]  INFO -- : Processing by DocumentsController#duplicate as JSON
+I, [2015-08-24T07:38:26.257000 #19020]  INFO -- :   Parameters: {"document"=>{"name"=>"Copy of Lease Agreement"}, "id"=>"9293"}
+I, [2015-08-24T07:38:26.369000 #19020]  INFO -- :   Rendered documents/show.json.jbuilder (7.0ms)
+I, [2015-08-24T07:38:26.370000 #19020]  INFO -- : Completed 201 Created in 112ms (Views: 15.0ms | ActiveRecord: 21.0ms)
+I, [2015-08-24T07:38:27.098000 #19020]  INFO -- : Started GET "/dashboard" for 50.31.29.217 at 2015-08-24 07:38:27 +0000
+I, [2015-08-24T07:38:27.105000 #19020]  INFO -- : Processing by DashboardController#show as HTML
+I, [2015-08-24T07:38:27.199000 #19020]  INFO -- :   Rendered dashboard/_documents.html.erb (73.0ms)
+I, [2015-08-24T07:38:27.699000 #19020]  INFO -- :   Rendered dashboard/_subscription.html.erb (494.0ms)
+I, [2015-08-24T07:38:27.700000 #19020]  INFO -- :   Rendered dashboard/_account.html.erb (499.0ms)
+I, [2015-08-24T07:38:28.116000 #19020]  INFO -- :   Rendered dashboard/_billing.html.erb (414.0ms)
+I, [2015-08-24T07:38:28.117000 #19020]  INFO -- :   Rendered dashboard/show.html.erb within layouts/application (995.0ms)
+I, [2015-08-24T07:38:28.124000 #19020]  INFO -- :   Rendered shared/_gtm.html.erb (3.0ms)
+I, [2015-08-24T07:38:28.130000 #19020]  INFO -- :   Rendered layouts/_user_menu.html.erb (4.0ms)
+I, [2015-08-24T07:38:28.135000 #19020]  INFO -- :   Rendered shared/_contact_number.erb (2.0ms)
+I, [2015-08-24T07:38:28.138000 #19020]  INFO -- :   Rendered shared/_mega_menu.html.erb (1.0ms)
+I, [2015-08-24T07:38:28.142000 #19020]  INFO -- :   Rendered documents/_preview.html.erb (2.0ms)
+I, [2015-08-24T07:38:28.145000 #19020]  INFO -- :   Rendered shared/_contact_number.erb (1.0ms)
+I, [2015-08-24T07:38:28.149000 #19020]  INFO -- :   Rendered shared/_disclaimer.html.erb (1.0ms)
+I, [2015-08-24T07:38:28.150000 #19020]  INFO -- : Completed 200 OK in 1045ms (Views: 1017.0ms | ActiveRecord: 16.0ms)

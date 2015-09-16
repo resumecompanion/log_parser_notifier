@@ -1,0 +1,76 @@
+I, [2015-08-24T05:51:49.146000 #19020]  INFO -- : Started POST "/chargify/hooks" for 50.112.130.129 at 2015-08-24 05:51:49 +0000
+I, [2015-08-24T05:51:49.485000 #19020]  INFO -- : Processing by Chargify::HooksController#dispatch_handler as XML
+I, [2015-08-24T05:51:49.487000 #19020]  INFO -- :   Parameters: {"id"=>"47858830", "event"=>"trial_end_notice", "payload"=>{"site"=>{"id"=>"27193", "subdomain"=>"legaltemplates-secure"}, "customer"=>{"id"=>"9632642", "first_name"=>"Alex", "last_name"=>"Auld", "reference"=>"16206", "organization"=>"", "email"=>"auldy@mac.com"}, "email_sent"=>"false", "estimated_renewal_amount_in_cents"=>"3995", "message"=>"End of trial for trial ending on 08/27/2015 for Alex Auld's subscription to Trial", "payment_profile"=>{"id"=>"6557640", "first_name"=>"Alex", "last_name"=>"Auld", "card_type"=>"visa", "masked_card_number"=>"XXXX-XXXX-XXXX-7600", "expiration_month"=>"7", "expiration_year"=>"2016"}, "product"=>{"id"=>"3681002", "name"=>"Trial", "product_family_id"=>"489153", "product_family_name"=>"Plans"}, "subscription"=>{"id"=>"9922506", "state"=>"trialing", "current_period_ends_at"=>"2015-08-27 01:51:22 -0400"}}}
+I, [2015-08-24T05:51:50.699000 #19020]  INFO -- :   Rendered text template (1.0ms)
+I, [2015-08-24T05:51:50.701000 #19020]  INFO -- : Completed 200 OK in 1212ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+I, [2015-08-24T05:53:24.231000 #19020]  INFO -- : Started GET "/users/sign_in" for 114.179.175.90 at 2015-08-24 05:53:24 +0000
+I, [2015-08-24T05:53:24.242000 #19020]  INFO -- : Processing by Users::SessionsController#new as HTML
+I, [2015-08-24T05:53:24.653000 #19020]  INFO -- :   Rendered users/sessions/new.html.erb within layouts/application (112.0ms)
+I, [2015-08-24T05:53:24.670000 #19020]  INFO -- :   Rendered shared/_gtm.html.erb (4.0ms)
+I, [2015-08-24T05:53:24.676000 #19020]  INFO -- :   Rendered shared/_contact_number.erb (3.0ms)
+I, [2015-08-24T05:53:24.682000 #19020]  INFO -- :   Rendered shared/_mega_menu.html.erb (3.0ms)
+I, [2015-08-24T05:53:24.687000 #19020]  INFO -- :   Rendered documents/_preview.html.erb (2.0ms)
+I, [2015-08-24T05:53:24.692000 #19020]  INFO -- :   Rendered shared/_contact_number.erb (1.0ms)
+I, [2015-08-24T05:53:24.701000 #19020]  INFO -- :   Rendered shared/_disclaimer.html.erb (2.0ms)
+I, [2015-08-24T05:53:24.702000 #19020]  INFO -- : Completed 200 OK in 460ms (Views: 179.0ms | ActiveRecord: 11.0ms)
+I, [2015-08-24T05:53:46.568000 #19020]  INFO -- : Started POST "/users/sign_in" for 114.179.175.90 at 2015-08-24 05:53:46 +0000
+I, [2015-08-24T05:53:46.582000 #19020]  INFO -- : Processing by Users::SessionsController#create as HTML
+I, [2015-08-24T05:53:46.588000 #19020]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"UE8RA2nOm/U1kQ28cIvS64e384u/MCXrjwXCqNyFiH0=", "return_to"=>"", "user"=>{"email"=>"magikol01@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"SIGN IN"}
+I, [2015-08-24T05:53:46.793000 #19020]  INFO -- : Redirected to https://app.legaltemplates.net/dashboard
+I, [2015-08-24T05:53:46.794000 #19020]  INFO -- : Completed 302 Found in 205ms (ActiveRecord: 21.0ms)
+I, [2015-08-24T05:53:47.008000 #19020]  INFO -- : Started GET "/dashboard" for 114.179.175.90 at 2015-08-24 05:53:47 +0000
+I, [2015-08-24T05:53:47.027000 #19020]  INFO -- : Processing by DashboardController#show as HTML
+I, [2015-08-24T05:53:47.361000 #19020]  INFO -- :   Rendered dashboard/_documents.html.erb (273.0ms)
+I, [2015-08-24T05:53:48.083000 #19020]  INFO -- :   Rendered dashboard/_subscription.html.erb (714.0ms)
+I, [2015-08-24T05:53:48.084000 #19020]  INFO -- :   Rendered dashboard/_account.html.erb (720.0ms)
+I, [2015-08-24T05:53:48.497000 #19020]  INFO -- :   Rendered dashboard/_billing.html.erb (410.0ms)
+I, [2015-08-24T05:53:48.498000 #19020]  INFO -- :   Rendered dashboard/show.html.erb within layouts/application (1413.0ms)
+I, [2015-08-24T05:53:48.508000 #19020]  INFO -- :   Rendered shared/_gtm.html.erb (1.0ms)
+I, [2015-08-24T05:53:48.519000 #19020]  INFO -- :   Rendered layouts/_user_menu.html.erb (5.0ms)
+I, [2015-08-24T05:53:48.521000 #19020]  INFO -- :   Rendered shared/_contact_number.erb (1.0ms)
+I, [2015-08-24T05:53:48.526000 #19020]  INFO -- :   Rendered shared/_mega_menu.html.erb (0.0ms)
+I, [2015-08-24T05:53:48.530000 #19020]  INFO -- :   Rendered documents/_preview.html.erb (1.0ms)
+I, [2015-08-24T05:53:48.534000 #19020]  INFO -- :   Rendered shared/_contact_number.erb (0.0ms)
+I, [2015-08-24T05:53:48.537000 #19020]  INFO -- :   Rendered shared/_disclaimer.html.erb (1.0ms)
+I, [2015-08-24T05:53:48.539000 #19020]  INFO -- : Completed 200 OK in 1511ms (Views: 1379.0ms | ActiveRecord: 90.0ms)
+I, [2015-08-24T07:35:11.541000 #19020]  INFO -- : Started GET "/documents/9293/preview/?page=0" for 50.31.29.217 at 2015-08-24 07:35:11 +0000
+I, [2015-08-24T07:35:11.549000 #19020]  INFO -- : Processing by DocumentsController#preview as JSON
+I, [2015-08-24T07:35:11.550000 #19020]  INFO -- :   Parameters: {"page"=>"0", "id"=>"9293"}
+I, [2015-08-24T07:35:11.597000 #19020]  INFO -- : Completed 404 Not Found in 46ms
+F, [2015-08-24T07:35:11.645000 #19020] FATAL -- :
+ActiveRecord::RecordNotFound (Couldn't find Document with 'id'=9293 [WHERE "documents"."user_id" = ?]):
+  app/controllers/documents_controller.rb:208:in `set_document'
+
+
+I, [2015-08-24T07:35:31.453000 #19020]  INFO -- : Started POST "/documents/9293/duplicate" for 50.31.29.217 at 2015-08-24 07:35:31 +0000
+I, [2015-08-24T07:35:31.465000 #19020]  INFO -- : Processing by DocumentsController#duplicate as JSON
+I, [2015-08-24T07:35:31.466000 #19020]  INFO -- :   Parameters: {"document"=>{"name"=>"Copy of Lease Agreement"}, "id"=>"9293"}
+I, [2015-08-24T07:35:31.519000 #19020]  INFO -- : Completed 404 Not Found in 52ms
+F, [2015-08-24T07:35:31.558000 #19020] FATAL -- :
+ActiveRecord::RecordNotFound (Couldn't find Document with 'id'=9293 [WHERE "documents"."user_id" = ?]):
+  app/controllers/documents_controller.rb:208:in `set_document'
+
+
+I, [2015-08-24T07:36:43.598000 #19020]  INFO -- : Started GET "/dashboard" for 50.31.29.217 at 2015-08-24 07:36:43 +0000
+I, [2015-08-24T07:36:43.603000 #19020]  INFO -- : Processing by DashboardController#show as HTML
+I, [2015-08-24T07:36:43.666000 #19020]  INFO -- :   Rendered dashboard/_documents.html.erb (5.0ms)
+I, [2015-08-24T07:36:43.668000 #19020]  INFO -- :   Rendered dashboard/_subscription.html.erb (1.0ms)
+I, [2015-08-24T07:36:43.669000 #19020]  INFO -- :   Rendered dashboard/_account.html.erb (2.0ms)
+I, [2015-08-24T07:36:43.670000 #19020]  INFO -- :   Rendered dashboard/_billing.html.erb (0.0ms)
+I, [2015-08-24T07:36:43.671000 #19020]  INFO -- :   Rendered dashboard/show.html.erb within layouts/application (11.0ms)
+I, [2015-08-24T07:36:43.677000 #19020]  INFO -- :   Rendered shared/_gtm.html.erb (0.0ms)
+I, [2015-08-24T07:36:43.683000 #19020]  INFO -- :   Rendered layouts/_guest_menu.html.erb (3.0ms)
+I, [2015-08-24T07:36:43.684000 #19020]  INFO -- :   Rendered shared/_contact_number.erb (0.0ms)
+I, [2015-08-24T07:36:43.687000 #19020]  INFO -- :   Rendered shared/_mega_menu.html.erb (1.0ms)
+I, [2015-08-24T07:36:43.688000 #19020]  INFO -- :   Rendered documents/_preview.html.erb (0.0ms)
+I, [2015-08-24T07:36:43.692000 #19020]  INFO -- :   Rendered shared/_contact_number.erb (0.0ms)
+I, [2015-08-24T07:36:43.694000 #19020]  INFO -- :   Rendered shared/_disclaimer.html.erb (1.0ms)
+I, [2015-08-24T07:36:43.695000 #19020]  INFO -- : Completed 200 OK in 91ms (Views: 34.0ms | ActiveRecord: 4.0ms)
+I, [2015-08-24T07:36:45.740000 #19020]  INFO -- : Started GET "/users/register" for 50.31.29.217 at 2015-08-24 07:36:45 +0000
+I, [2015-08-24T07:36:45.746000 #19020]  INFO -- : Processing by Users::RegistrationsController#register as */*
+I, [2015-08-24T07:36:45.806000 #19020]  INFO -- :   Rendered users/registrations/register.html.erb (46.0ms)
+I, [2015-08-24T07:36:45.807000 #19020]  INFO -- : Completed 200 OK in 61ms (Views: 49.0ms | ActiveRecord: 2.0ms)
+I, [2015-08-24T07:36:46.187000 #19020]  INFO -- : Started GET "/users/edit" for 50.31.29.217 at 2015-08-24 07:36:46 +0000
+I, [2015-08-24T07:36:46.193000 #19020]  INFO -- : Processing by Users::RegistrationsController#edit as */*
+I, [2015-08-24T07:36:46.272000 #19020]  INFO -- :   Rendered users/registrations/edit.html.erb (56.0ms)
+I, [2015-08-24T07:36:46.274000 #19020]  INFO -- : Completed 200 OK in 80ms (Views: 59.0ms | ActiveRecord: 3.0ms)
