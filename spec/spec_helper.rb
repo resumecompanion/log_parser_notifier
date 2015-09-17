@@ -1,5 +1,6 @@
 require 'bundler/setup'
 require 'logger'
+require 'pry'
 
 Bundler.setup
 
