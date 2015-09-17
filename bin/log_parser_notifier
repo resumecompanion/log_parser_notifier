@@ -37,5 +37,5 @@ while true
 
   request_notifier.parse_and_trigger_notifications
 
-  sleep(opts[:check_interval])
+  sleep(opts[:check_interval] * 60)
 end
