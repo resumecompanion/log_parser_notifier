@@ -6,7 +6,7 @@ trap 'SIGINT' do
   exit 130
 end
 
-opts = Slop.parse do |o|
+opts = Slop.parse! do |o|
   o.banner = 'usage: lib_parser_notifier [options] file_name'
   o.on :c, :check_interval=, 'check interval (in minutes)', default: 5, as: Integer
   o.on :verbose, 'enable verbose mode'
@@ -31,6 +31,8 @@ if opts.verbose?
 end
 
 require File.join(File.dirname(__FILE__), '..', 'lib', 'log_parser_notifier')
+
+puts ARGV.inspect
 
 request_notifier = LogParserNotifier::RailsRequestNotifier.new(ARGV.first)
 
