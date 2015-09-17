@@ -9,6 +9,7 @@ end
 opts = Slop.parse! do |o|
   o.banner = 'usage: lib_parser_notifier [options] file_name'
   o.on :c, :check_interval=, 'check interval (in minutes)', default: 5, as: Integer
+  o.on :slow_request_threshold=, 'How long does a request need to create an event? (in ms)', default: 500, as: Integer
   o.on :verbose, 'enable verbose mode'
   # o.integer '--check_interval', 'check interval (in minutes)', default: 5
   # o.bool '-v', '--verbose', 'enable verbose mode'
@@ -32,9 +33,7 @@ end
 
 require File.join(File.dirname(__FILE__), '..', 'lib', 'log_parser_notifier')
 
-puts ARGV.inspect
-
-request_notifier = LogParserNotifier::RailsRequestNotifier.new(ARGV.first)
+request_notifier = LogParserNotifier::RailsRequestNotifier.new(ARGV.first, opts[:slow_request_threshold])
 
 while true
   LogParserNotifier.logger.debug('waking up and checking log')

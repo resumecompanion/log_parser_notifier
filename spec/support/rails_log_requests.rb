@@ -19,6 +19,17 @@ I, [2015-08-24T07:36:43.695000 #19020]  INFO -- : Completed 200 OK in 91ms (View
 )
     end
 
+    def self.slow_request
+StringIO.new %Q(I, [2015-09-17T03:19:58.989000 #12393]  INFO -- : Started GET "/documents/new?template_id=30000&state=AK" for 123.193.169.96 at 2015-09-17 03:19:58 +0000
+I, [2015-09-17T03:19:58.994000 #12393]  INFO -- : Processing by DocumentsController#new as HTML
+I, [2015-09-17T03:19:58.994000 #12393]  INFO -- :   Parameters: {"template_id"=>"30000", "state"=>"AK"}
+I, [2015-08-24T07:36:43.688000 #19020]  INFO -- :   Rendered documents/_preview.html.erb (0.0ms)
+I, [2015-08-24T07:36:43.692000 #19020]  INFO -- :   Rendered shared/_contact_number.erb (0.0ms)
+I, [2015-08-24T07:36:43.694000 #19020]  INFO -- :   Rendered shared/_disclaimer.html.erb (1.0ms)
+I, [2015-08-24T07:36:43.695000 #19020]  INFO -- : Completed 200 OK in 800ms (Views: 34.0ms | ActiveRecord: 4.0ms)
+)
+    end
+
     def self.failed_request
 StringIO.new %Q(I, [2015-08-24T07:35:11.541000 #19020]  INFO -- : Started GET "/documents/9293/preview/?page=0" for 50.31.29.217 at 2015-08-24 07:35:11 +0000
 I, [2015-08-24T07:35:11.549000 #19020]  INFO -- : Processing by DocumentsController#preview as JSON
