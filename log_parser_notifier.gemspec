@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'request-log-analyzer', '~> 1.13.4'
-  spec.add_dependency 'slop', '~> 4.2.0'
+  spec.add_dependency 'slop', '~> 3.6.0'
   spec.add_dependency 'dogstatsd-ruby', '~> 1.5.0'
 
   spec.add_development_dependency 'bundler', '~> 1.7'

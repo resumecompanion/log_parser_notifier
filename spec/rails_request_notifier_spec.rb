@@ -45,8 +45,8 @@ module LogParserNotifier
     describe 'partial request (AKA log got read while it was being written)' do
       it 'should not record partial requests' do
         @logs = RailsLogRequests.partial_request
-        expect_any_instance_of(Statsd).to_not receive(:increment)
-        expect_any_instance_of(Statsd).to_not receive(:timing)
+        expect_any_instance_of(Statsd).to_not receive(:increment).with('rails.requests', tags: %w(controller:DashboardController action:index con_act:DashboardController#index))
+        expect_any_instance_of(Statsd).to_not receive(:timing).with('rails.load_time', anything, tags: %w(controller:DashboardController action:index con_act:DashboardController#index))
       end
     end
   end

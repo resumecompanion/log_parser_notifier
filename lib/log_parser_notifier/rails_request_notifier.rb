@@ -19,7 +19,7 @@ module LogParserNotifier
         tags = %W(controller:#{request[:controller]} action:#{request[:action]} con_act:#{request[:controller]}##{request[:action]})
 
         LogParserNotifier.logger.debug("processing request for #{request[:controller]}##{request[:action]} with status: #{request[:status]} it is complete: #{request.completed?}")
-        if request[:status] >= 200 && request[:status] < 400
+        if request.completed? && request[:status] >= 200 && request[:status] < 400
 
           statsd.increment 'rails.requests', tags: tags
           statsd.timing 'rails.load_time', request[:duration] * 1000, tags: tags
