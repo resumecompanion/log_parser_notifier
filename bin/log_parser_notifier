@@ -8,8 +8,10 @@ end
 
 opts = Slop.parse do |o|
   o.banner = 'usage: lib_parser_notifier [options] file_name'
-  o.integer '--check_interval', 'check interval (in minutes)', default: 5
-  o.bool '-v', '--verbose', 'enable verbose mode'
+  o.on :c, :check_interval=, 'check interval (in minutes)', default: 5, as: Integer
+  o.on :verbose, 'enable verbose mode'
+  # o.integer '--check_interval', 'check interval (in minutes)', default: 5
+  # o.bool '-v', '--verbose', 'enable verbose mode'
   o.on '--version', 'print the version' do
     require File.join(File.dirname(__FILE__), '..', 'lib', 'log_parser_notifier')
     puts LogParserNotifier::VERSION
@@ -30,7 +32,7 @@ end
 
 require File.join(File.dirname(__FILE__), '..', 'lib', 'log_parser_notifier')
 
-request_notifier = LogParserNotifier::RailsRequestNotifier.new(opts.arguments.first)
+request_notifier = LogParserNotifier::RailsRequestNotifier.new(ARGV.first)
 
 while true
   LogParserNotifier.logger.debug('waking up and checking log')
