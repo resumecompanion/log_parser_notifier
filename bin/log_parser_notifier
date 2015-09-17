@@ -1,0 +1,41 @@
+#!/usr/bin/env ruby
+
+require 'slop'
+
+trap 'SIGINT' do
+  exit 130
+end
+
+opts = Slop.parse do |o|
+  o.banner = 'usage: lib_parser_notifier [options] file_name'
+  o.integer '--check_interval', 'check interval (in minutes)', default: 5
+  o.bool '-v', '--verbose', 'enable verbose mode'
+  o.on '--version', 'print the version' do
+    require File.join(File.dirname(__FILE__), '..', 'lib', 'log_parser_notifier')
+    puts LogParserNotifier::VERSION
+    exit
+  end
+  o.on '-h', '--help', 'help' do
+    puts o
+    exit
+  end
+end
+
+if opts.verbose?
+  require 'logger'
+  module LogParserNotifier
+    LogLevel = Logger::DEBUG
+  end
+end
+
+require File.join(File.dirname(__FILE__), '..', 'lib', 'log_parser_notifier')
+
+request_notifier = LogParserNotifier::RailsRequestNotifier.new(opts.arguments.first)
+
+while true
+  LogParserNotifier.logger.debug('waking up and checking log')
+
+  request_notifier.parse_and_trigger_notifications
+
+  sleep(opts[:check_interval])
+end

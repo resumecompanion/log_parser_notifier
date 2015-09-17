@@ -1,6 +1,6 @@
-require 'log_parser_notifier/version'
-require 'log_parser_notifier/log_reader'
-require 'log_parser_notifier/rails_request_notifier'
+require File.join(File.dirname(__FILE__), 'log_parser_notifier', 'version')
+require File.join(File.dirname(__FILE__), 'log_parser_notifier', '/log_reader')
+require File.join(File.dirname(__FILE__), 'log_parser_notifier', '/rails_request_notifier')
 
 require 'logger'
 require 'request_log_analyzer'
