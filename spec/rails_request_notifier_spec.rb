@@ -35,7 +35,7 @@ module LogParserNotifier
           expect_any_instance_of(Statsd).to receive('event').with(
             'DocumentsController#new GET slow request 0.8 sec',
             "Started GET \"/documents/new?template_id=30000&state=AK\" for 123.193.169.96 at 2015-09-17 03:19:58 +0800\nProcessing by DocumentsController#new as HTML\nParameters: {:template_id=>\"30000\", :state=>\"AK\"}\n  Rendered documents/_preview.html.erb (0.0ms)\n  Rendered shared/_contact_number.erb (0.0ms)\n  Rendered shared/_disclaimer.html.erb (0.001ms)\nCompleted 200 OK in 800ms (Views: 34.0ms | ActiveRecord: 4.0ms)",
-            date_happened: 1442431198,
+            date_happened: '1442431198',
             aggregation_key: 'slow_request_rails',
             source_type_name: 'rails_log',
             alert_type: 'warning',
