@@ -41,6 +41,14 @@ ActiveRecord::RecordNotFound (Couldn't find Document with 'id'=9293 [WHERE "docu
 )
     end
 
+    def self.redirect_request
+StringIO.new %Q(Started POST "/users/login" for 208.114.165.166 at 2015-11-17 07:01:05 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qmtPC6WD3lnffr/j/eFSKjM6LUFtPlOBEt3EJoiWuw0=", "return_to"=>"", "login_type"=>"[FILTERED]", "user"=>{"email"=>"jetbarker@outlook.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+Redirected to https://app.resumegenius.com/dashboard
+Completed 302 Found in 90.6ms (ActiveRecord: 5.8ms))
+    end
+
     def self.partial_request
 StringIO.new %Q(I, [2015-08-24T07:36:43.598000 #19020]  INFO -- : Started GET "/dashboard" for 50.31.29.217 at 2015-08-24 07:36:43 +0000
 I, [2015-08-24T07:36:43.603000 #19020]  INFO -- : Processing by DashboardController#index as HTML

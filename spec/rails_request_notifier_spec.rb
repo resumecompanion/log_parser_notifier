@@ -45,6 +45,27 @@ module LogParserNotifier
       end
     end
 
+    describe 'redirect request' do
+      before { @logs = RailsLogRequests.redirect_request }
+      after { rails_request_notifier.parse_and_trigger_notifications }
+
+      it 'should record the number of successful requests' do
+        expect_any_instance_of(Statsd).to receive(:increment).with('rails.requests', tags: %w(controller:SessionsController action:create con_act:SessionsController#create))
+      end
+
+      it 'should record the average load time of the requests' do
+        expect_any_instance_of(Statsd).to receive(:timing).with('rails.load_time', 90.6, tags: %w(controller:SessionsController action:create con_act:SessionsController#create))
+      end
+
+      it 'should not record the number of failed requests' do
+        expect_any_instance_of(Statsd).to_not receive(:increment).with('rails.failed_requests', anything)
+      end
+
+      it 'should not create an event for short requests' do
+        expect_any_instance_of(Statsd).to_not receive('event')
+      end
+    end
+
     describe 'failed request' do
       before { @logs = RailsLogRequests.failed_request }
       after { rails_request_notifier.parse_and_trigger_notifications }

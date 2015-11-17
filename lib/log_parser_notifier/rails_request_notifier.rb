@@ -57,7 +57,7 @@ module LogParserNotifier
       when :rendered
         "  Rendered #{line_hash[:rendered_file]} (#{line_hash[:partial_duration]}ms)"
       when :completed
-        "Completed #{line_hash[:status]} OK in #{(line_hash[:duration] * 1000).to_i}ms (Views: #{line_hash[:view] * 1000}ms | ActiveRecord: #{line_hash[:db] * 1000}ms)"
+        "Completed #{line_hash[:status]} OK in #{(line_hash[:duration] * 1000).to_i}ms (Views: #{(line_hash[:view] || 0) * 1000}ms | ActiveRecord: #{(line_hash[:db] || 0) * 1000}ms)"
       else
         line_hash.inspect
       end
